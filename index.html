@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Special Letter</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .envelope {
+      position: relative;
+      width: 320px;
+      height: 200px;
+      background: #b22222;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .letter {
+      display: none;
+      background: #fff;
+      color: #333;
+      border: 2px solid #b22222;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.5;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #b22222;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #8b1a1a;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" id="envelope">💌 Tap to Open</div>
+
+  <div class="letter" id="letter">
+    <h2>To my special someone :> &gt;</h2>
+    <p>
+      Even if u were never mine,<br>
+      u will always be the most special part of me.<br><br>
+      I am still here, waiting..<br>
+      not bc it’s easy,<br>
+      but bc u r worth everything.
+    </p>
+  </div>
+
+  <button id="toggleBtn">Open</button>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    const letter = document.getElementById("letter");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.addEventListener("click", () => {
+      if (letter.style.display === "block") {
+        letter.style.display = "none";
+        envelope.style.display = "flex";
+        toggleBtn.textContent = "Open";
+      } else {
+        letter.style.display = "block";
+        envelope.style.display = "none";
+        toggleBtn.textContent = "Close";
+      }
+    });
+  </script>
+</body>
+</html>
